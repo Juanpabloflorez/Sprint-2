@@ -7,14 +7,20 @@ Agregar tarea:
 <img width="615" height="280" alt="image" src="https://github.com/user-attachments/assets/154d4349-0205-4044-a755-a939a414fb07" />
 
 
+
+
 Leer tarea: Lectura después de agregar tarea con la función get()
 
 <img width="480" height="107" alt="image" src="https://github.com/user-attachments/assets/8fa1bb92-bd93-49ad-896e-b0638a8a21bd" />
+
+
 
 Actualizar tarea: Cambiar la importancia de 2 a 3
 
 <img width="662" height="50" alt="image" src="https://github.com/user-attachments/assets/136f0bc5-e406-4f4d-b061-8ae3ce31f56c" />
 <img width="367" height="191" alt="image" src="https://github.com/user-attachments/assets/25498c14-0760-45e6-8bdf-561dc2ca2e91" />
+
+
 
 Eliminar tarea: Base de datos después de eliminar el child 2 usando delete()
 
