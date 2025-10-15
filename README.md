@@ -18,8 +18,6 @@ Lectura después de agregar tarea con la función get()
 Actualizar tarea:
 Cambiar la importancia de 2 a 3:
 <img width="662" height="50" alt="image" src="https://github.com/user-attachments/assets/136f0bc5-e406-4f4d-b061-8ae3ce31f56c" />
-
-Base de datos después de la actualización
 <img width="367" height="191" alt="image" src="https://github.com/user-attachments/assets/25498c14-0760-45e6-8bdf-561dc2ca2e91" />
 
 Eliminar tarea:
