@@ -1,28 +1,18 @@
-Demostración CRUD
+Demostración CRUD para un organizador de tareas
 
 Agregar tarea:
-
-<img width="667" height="167" alt="image" src="https://github.com/user-attachments/assets/1959dce2-2663-4d3c-9cb4-193b212458b3" />
-<img width="802" height="52" alt="image" src="https://github.com/user-attachments/assets/fa7b43b2-cd16-4d96-8d31-b3cc479180cc" />
-<img width="615" height="280" alt="image" src="https://github.com/user-attachments/assets/154d4349-0205-4044-a755-a939a414fb07" />
-
-
+<img width="747" height="182" alt="image" src="https://github.com/user-attachments/assets/0b6155d4-16c4-4be9-bd62-875aca7af83c" />
+<img width="618" height="197" alt="image" src="https://github.com/user-attachments/assets/6dbaea66-2d78-4464-a7f7-8fba26a49f05" />
 
 
 Leer tarea: Lectura después de agregar tarea con la función get()
-
-<img width="480" height="107" alt="image" src="https://github.com/user-attachments/assets/8fa1bb92-bd93-49ad-896e-b0638a8a21bd" />
-
+<img width="461" height="70" alt="image" src="https://github.com/user-attachments/assets/07315a1d-41b8-4058-83db-8d5690121940" />
 
 
 Actualizar tarea: Cambiar la importancia de 2 a 3
-
-<img width="662" height="50" alt="image" src="https://github.com/user-attachments/assets/136f0bc5-e406-4f4d-b061-8ae3ce31f56c" />
-<img width="367" height="191" alt="image" src="https://github.com/user-attachments/assets/25498c14-0760-45e6-8bdf-561dc2ca2e91" />
-
+<img width="607" height="201" alt="image" src="https://github.com/user-attachments/assets/94a3d21b-5f2e-4662-aad4-7b601f328f0d" />
 
 
 Eliminar tarea: Base de datos después de eliminar el child 2 usando delete()
-
-<img width="673" height="202" alt="image" src="https://github.com/user-attachments/assets/ce747d1d-9cb4-4f11-be3e-c4b04eb4d20e" />
-<img width="667" height="73" alt="image" src="https://github.com/user-attachments/assets/e12452b7-4ea4-4fed-ad6b-a553d9d31935" />
+<img width="683" height="205" alt="image" src="https://github.com/user-attachments/assets/83ded23c-ae75-4dca-8a21-ddf811c85f19" />
+<img width="650" height="85" alt="image" src="https://github.com/user-attachments/assets/3391359c-c161-4e39-af76-a386b591f982" />
