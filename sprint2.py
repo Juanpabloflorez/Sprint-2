@@ -7,10 +7,15 @@ firebase_admin.initialize_app(cred, {"databaseURL": "https://proyecto-poo-b05c4-
 ref = db.reference("/")
 usuarios = db.reference("Usuarios")
 
+# Cambios a composición de tarea: agregarTarea, actualizartarea
+# Base de datos: sprint 2
+# Codigo: sprint 2
+
 def crearUsuario():
     user = input("Crea el nombre de tu nueva cuenta: ")
     password = input("Crea una contraseña para tu nueva cuenta: ")
     ref.child("Usuarios").child(user).set({"Password: ": password})
+
 
 def login():
     user=input("Ingrese su usuario: ")
@@ -24,28 +29,35 @@ def login():
         password=input("Ingrese su contraseña: ")
         while password not in get[user]["Password"]:
             password=input("Contraseña incorrecta, intente nuevamente")
-        leerTareas(user)
+        print("Bienvenido,",user)
 
 
 def agregarTarea(user):
     tarea = input("Ingrese el nombre de su nueva tarea: ")
+
     importancia = int(input("Ingrese un valor del 1 al 3 para establecer la importancia de la tarea (1 minima, 2 medio, 3 maxima): "))
     while importancia != 1 and importancia != 2 and importancia != 3:
         importancia=int(input("Nivel de importancia incoherente (rango de 1 a 3): "))
+    
     categoria = int(input("Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
+    
+    tiempo=int(input("¿Cual es el tiempo límite de tu tarea (En días): ?"))
+    while tiempo < 0:
+        tiempo=int(input("Ingrese numeros mayores a 0 para saber cual es la fecha límite de tu tarea: "))
 
-    ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia, "Categoria: ": categoria})
+    ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia, "Categoria": categoria, "Tiempo": tiempo, "Estado": False})
 
 
 def actualizarTarea(user):
-    opcion=int(input("Ingrese 1 para editar el nombre de la tarea, 2 para editar la importancia, 3 para editar la categoria: "))
+    tarea=input("Ingrese el nombre de la tarea: ")
 
-    while opcion != 1 and opcion != 2 and opcion != 3:
-        opcion=int(input("Opcion no valida. Ingrese 1 para editar el nombre de la tarea, 2 para editar la importancia: "))
+    opcion=int(input("Editor de tarea: 1: Nombre, 2: Importancia, 3: Categoría, 4: Tiempo, 5: Estado"))
+
+    while opcion != 1 and opcion != 2 and opcion != 3 and opcion != 4:
+        opcion=int(input("Opcion no valida: 1: Nombre, 2: Importancia, 3: Categoría, 4: Tiempo"))
 
     if opcion == 1:
-        tarea=input("Ingrese el nombre original de la tarea: ")
-        nombreNuevo = input("Ingrese el nuevo nombre: ")
+        nombreNuevo = input("Ingrese el nuevo nombre de la tarea: ")
         tareaOriginal = ref.child("Usuarios").child(user).child("Tareas").child(tarea).get()
         ref.child("Usuarios").child(user).child("Tareas").child(nombreNuevo).set(tareaOriginal)
         tareaOriginal = ref.child("Usuarios").child(user).child("Tareas").child(tarea).delete()
@@ -62,10 +74,14 @@ def actualizarTarea(user):
         while categoria != 1 and opcion != 2 and opcion != 3:
             categoria=int(input("Opcion no valida. Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
 
-        ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Categoria: ": categoria})
+        ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Categoria": categoria})
+
+    elif opcion == 4:
+        tiempo=int(input("¿Cual es el tiempo límite de tu tarea (En días)?"))
+        while tiempo < 0:
+            tiempo=int(input("Ingrese numeros mayores a 0 para saber cual es la fecha límite de tu tarea"))
+        ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Tiempo": tiempo})
         
-
-
 
 def eliminarTarea(user):
     tarea=input("Ingrese el nombre original de la tarea: ")
@@ -84,8 +100,14 @@ def leerTareas(user):
         print("No hay tareas registradas.")
 
 
+def marcarCompletada(user):
+    tarea=input("Ingrese el nombre de la tarea: ")
+    ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Estado": True})
+    print(tarea,"completada")
+
+
 def main():
-    agregarTarea("Jairo")
+    marcarCompletada("Jairo")
 
 if __name__ == "__main__":
     main()
