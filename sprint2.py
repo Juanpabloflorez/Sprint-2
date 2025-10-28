@@ -7,7 +7,7 @@ firebase_admin.initialize_app(cred, {"databaseURL": "https://proyecto-poo-b05c4-
 ref = db.reference("/")
 usuarios = db.reference("Usuarios")
 
-# Cambios a composición de tarea: agregarTarea, actualizartarea
+# Cambios a composición de tarea: agregarTarea, actualizartarea, e individuales
 # Base de datos: sprint 2
 # Codigo: sprint 2
 # Prints al final de cada funcion refiere a un view externo al codigo de guia logica
@@ -141,6 +141,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
