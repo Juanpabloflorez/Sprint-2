@@ -41,7 +41,7 @@ def agregarTarea(user):
     
     categoria = int(input("Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
     
-    tiempo=int(input("¿Cual es el tiempo límite de tu tarea (En días): ?"))
+    tiempo=int(input("¿Cual es el tiempo límite de tu tarea (En días)?: "))
     while tiempo < 0:
         tiempo=int(input("Ingrese numeros mayores a 0 para saber cual es la fecha límite de tu tarea: "))
 
@@ -61,12 +61,14 @@ def actualizarTarea(user):
         tareaOriginal = ref.child("Usuarios").child(user).child("Tareas").child(tarea).get()
         ref.child("Usuarios").child(user).child("Tareas").child(nombreNuevo).set(tareaOriginal)
         tareaOriginal = ref.child("Usuarios").child(user).child("Tareas").child(tarea).delete()
+        print("Nombre de la tarea cambiado a: ",nombreNuevo)
 
     elif opcion == 2:
         importancia=int(input("Ingrese un valor del 1 al 3 para establecer la importancia de la tarea: "))
         while importancia != 1 and importancia != 2 and importancia != 3:
             importancia=int(input("Nivel de importancia incoherente (rango de 1 a 3): "))
         ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia})
+        print("Importancia cambiada a: ", importancia)
 
     elif opcion == 3:
         categoria = int(input("Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
@@ -75,12 +77,15 @@ def actualizarTarea(user):
             categoria=int(input("Opcion no valida. Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
 
         ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Categoria": categoria})
+        print("Categoria cambiada a: ", categoria)
 
     elif opcion == 4:
         tiempo=int(input("¿Cual es el tiempo límite de tu tarea (En días)?"))
         while tiempo < 0:
             tiempo=int(input("Ingrese numeros mayores a 0 para saber cual es la fecha límite de tu tarea"))
+
         ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Tiempo": tiempo})
+        print("Tiempo cambiado a: ", tiempo)
         
 
 def eliminarTarea(user):
@@ -107,7 +112,7 @@ def marcarCompletada(user):
 
 
 def main():
-    marcarCompletada("Jairo")
+    leerTareas("Ivan")
 
 if __name__ == "__main__":
     main()
