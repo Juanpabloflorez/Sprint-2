@@ -46,6 +46,7 @@ def agregarTarea(user):
         tiempo=int(input("Ingrese numeros mayores a 0 para saber cual es la fecha límite de tu tarea: "))
 
     ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia, "Categoria": categoria, "Tiempo": tiempo, "Estado": False})
+    print("Tarea creada exitosamente")
 
 
 def actualizarTarea(user):
@@ -126,3 +127,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
