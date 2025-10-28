@@ -39,6 +39,12 @@ def agregarTarea(user):
     importancia = int(input("Ingrese un valor del 1 al 3 para establecer la importancia de la tarea (1 minima, 2 medio, 3 maxima): "))
     while importancia != 1 and importancia != 2 and importancia != 3:
         importancia=int(input("Nivel de importancia incoherente (rango de 1 a 3): "))
+    if importancia == 1:
+        importancia = "minima"
+    elif importancia == 2:
+        importancia = "media"
+    elif importancia == 3:
+        importancia = "maxima"
     
     categoria = int(input("Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
     if categoria == 1:
@@ -134,6 +140,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
