@@ -11,6 +11,7 @@ usuarios = db.reference("Usuarios")
 # Base de datos: sprint 2
 # Codigo: sprint 2
 # Prints al final de cada funcion refiere a un view externo al codigo de guia logica
+# Este codigo es solamente logico
 
 def crearUsuario():
     user = input("Crea el nombre de tu nueva cuenta: ")
@@ -141,6 +142,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
