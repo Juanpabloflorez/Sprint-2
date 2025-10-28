@@ -40,6 +40,12 @@ def agregarTarea(user):
         importancia=int(input("Nivel de importancia incoherente (rango de 1 a 3): "))
     
     categoria = int(input("Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
+    if categoria == 1:
+        categoria = "personal"
+    elif categoria == 2:
+        categoria = "estudios"
+    elif categoria == 3:
+        categoria = "trabajo"
     
     tiempo=int(input("¿Cual es el tiempo límite de tu tarea (En días)?: "))
     while tiempo < 0:
@@ -127,6 +133,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
