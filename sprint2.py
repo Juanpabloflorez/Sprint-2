@@ -15,6 +15,7 @@ def crearUsuario():
     user = input("Crea el nombre de tu nueva cuenta: ")
     password = input("Crea una contraseña para tu nueva cuenta: ")
     ref.child("Usuarios").child(user).set({"Password: ": password})
+    print("Usuario creado exitosamente")
 
 
 def login():
@@ -133,6 +134,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
