@@ -62,6 +62,17 @@ def agregarTarea(user):
 
     ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia, "Categoria": categoria, "Tiempo": tiempo, "Estado": "No completada"})
     print("Tarea creada exitosamente")
+    opc=int(input("Ingrese 1 para agregar otra tarea, 2 para actualizar, 3 para leer, 4 para eliminar y 5 para marcar una tarea completada: "))
+    if opc == 1:
+        agregarTarea(user)
+    elif opc == 2:
+        actualizarTarea(user)
+    elif opc == 3:
+        leerTareas(user)
+    elif opc == 4:
+        eliminarTarea(user)
+    elif opc == 5:
+        marcarCompletada(user)
 
 
 def actualizarTarea(user):
@@ -138,17 +149,7 @@ def marcarCompletada(user):
 
 
 def main():
-    leerTareas("Ivan")
+    crearUsuario()
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
