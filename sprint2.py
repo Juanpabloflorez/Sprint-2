@@ -119,7 +119,7 @@ def leerTareas(user):
 def marcarCompletada(user):
     tarea=input("Ingrese el nombre de la tarea: ")
     ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Estado": True})
-    print(tarea,"completada")
+    print(tarea,"completado/a")
 
 
 def main():
@@ -127,4 +127,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
