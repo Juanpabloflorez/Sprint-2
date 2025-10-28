@@ -45,7 +45,7 @@ def agregarTarea(user):
     while tiempo < 0:
         tiempo=int(input("Ingrese numeros mayores a 0 para saber cual es la fecha límite de tu tarea: "))
 
-    ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia, "Categoria": categoria, "Tiempo": tiempo, "Estado": False})
+    ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia, "Categoria": categoria, "Tiempo": tiempo, "Estado": "No completada"})
     print("Tarea creada exitosamente")
 
 
@@ -118,7 +118,7 @@ def leerTareas(user):
 
 def marcarCompletada(user):
     tarea=input("Ingrese el nombre de la tarea: ")
-    ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Estado": True})
+    ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Estado: Completada"})
     print(tarea,"completado/a")
 
 
@@ -127,5 +127,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
