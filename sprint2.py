@@ -10,6 +10,7 @@ usuarios = db.reference("Usuarios")
 # Cambios a composición de tarea: agregarTarea, actualizartarea
 # Base de datos: sprint 2
 # Codigo: sprint 2
+# Prints al final de cada funcion puede referirise a un view externo al codigo de guia logica
 
 def crearUsuario():
     user = input("Crea el nombre de tu nueva cuenta: ")
@@ -140,6 +141,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
