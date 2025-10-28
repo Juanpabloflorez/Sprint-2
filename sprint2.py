@@ -64,11 +64,16 @@ def actualizarTarea(user):
         print("Nombre de la tarea cambiado a: ",nombreNuevo)
 
     elif opcion == 2:
-        importancia=int(input("Ingrese un valor del 1 al 3 para establecer la importancia de la tarea: "))
+        importancia=int(input("Ingrese un valor del 1 al 3 para establecer la importancia de la tarea (1 minima, 2 media, 3 maxima): "))
         while importancia != 1 and importancia != 2 and importancia != 3:
             importancia=int(input("Nivel de importancia incoherente (rango de 1 a 3): "))
         ref.child("Usuarios").child(user).child("Tareas").child(tarea).set({"importancia de la Tarea": importancia})
-        print("Importancia cambiada a: ", importancia)
+        if importancia == 1:
+            print("Importancia cambiada a minima")
+        elif importancia == 2:
+            print("Importancia cambiada a media")
+        elif importancia == 3:
+            print("Importancia cambiada a maxima")
 
     elif opcion == 3:
         categoria = int(input("Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
@@ -77,7 +82,12 @@ def actualizarTarea(user):
             categoria=int(input("Opcion no valida. Ingrese un valor del 1 al 3 para establecer la categoria de la tarea (1 personal, 2 estudios, 3 trabajo): "))
 
         ref.child("Usuarios").child(user).child("Tareas").child(tarea).update({"Categoria": categoria})
-        print("Categoria cambiada a: ", categoria)
+        if categoria == 1:
+            print("categoria cambiada a personal")
+        elif categoria == 2:
+            print("categoria cambiada a estudios")
+        elif categoria == 3:
+            print("categoria cambiada a trabajo")
 
     elif opcion == 4:
         tiempo=int(input("¿Cual es el tiempo límite de tu tarea (En días)?"))
