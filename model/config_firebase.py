@@ -15,9 +15,10 @@ class FirebaseConfig:
     
     def initialize(self):
         if not self._initialized:
-            cred = credentials.Certificate("repo-sprint-2/credentials.json")
+            cred = credentials.Certificate("Sprint-2/credentials.json")
             firebase_admin.initialize_app(cred, {"databaseURL": "https://proyecto-poo-b05c4-default-rtdb.firebaseio.com/"})
             self._initialized = True
     
     def get_reference(self, path: str = "/"):
+
         return db.reference(path)
