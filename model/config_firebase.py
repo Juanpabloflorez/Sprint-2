@@ -1,7 +1,7 @@
 import firebase_admin
 from firebase_admin import db, credentials
 
-
+#DEJAR LAS CREDENCIALES JSON FUERA DE LAS CARPETAS, SOLO DENTRO DE Sprint-2
 class FirebaseConfig:
     #Configuración Singleton de Firebase
     _instance = None
@@ -22,3 +22,4 @@ class FirebaseConfig:
     def get_reference(self, path: str = "/"):
 
         return db.reference(path)
+
